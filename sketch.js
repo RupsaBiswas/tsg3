@@ -10,6 +10,7 @@ var box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,box11,box12;
 var polygon,polygonImg;
 var slingshot;
 var score=0;
+var backgroundImg;
 
 function preload(){
   polygonImg=loadImage("polygon.png");
@@ -64,7 +65,11 @@ function setup() {
 }
 
 function draw() {
-  background(0);  
+
+  if(backgroundImg){
+    background(backgroundImg);  
+
+  }
 
 
 textSize(35);
@@ -163,10 +168,10 @@ async function getBackgroundImg(){
   var hour = datetime.slice(11,13);
   
   if(hour>=06 && hour<=19){
-    bg="images/background1.jpg"
+    bg="images/sun.jpg"
     }
   else{
-    bg= "images/background2.jpg";
+    bg= "images/nighttime.jpg";
     
   }
 
